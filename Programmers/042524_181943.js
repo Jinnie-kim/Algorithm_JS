@@ -15,5 +15,12 @@ function solution(my_string, overwrite_string, s) {
   return answer.join('');
 }
 
-solution('Program29b8UYP', 'merS123', 7);
-solution('He11oWor1d', 'lloWorl', 2);
+function solution2(my_string, overwrite_string, s) {
+  let answer = [...my_string];
+
+  answer.splice(s, overwrite_string.length, overwrite_string);
+  return answer.join('');
+}
+
+solution2('Program29b8UYP', 'merS123', 7);
+solution2('He11oWor1d', 'lloWorl', 2);
