@@ -11,15 +11,15 @@ function solution(numer1, denom1, numer2, denom2) {
     numer = numer1 * denom2 + numer2 * denom1; // 분자
   }
 
-  const irreducibleNum = findIrreducibleNumber(numer, denom);
+  const irreducibleNum = findGCD(numer, denom);
   // const irreducibleNum = findGcd(numer, denom);
 
   return [numer / irreducibleNum, denom / irreducibleNum];
 }
 
-function findIrreducibleNumber(numer, denom) {
+function findGCD(numer, denom) {
   let max = 1;
-  for (let i = 2; i <= Math.min(number, denom); i++) {
+  for (let i = 2; i <= Math.min(numer, denom); i++) {
     if (denom % i === 0 && numer % i === 0) {
       max = max >= i ? max : i;
     }
@@ -29,7 +29,7 @@ function findIrreducibleNumber(numer, denom) {
 }
 
 function findGcd(a, b) {
-  return b === 0 ? a : findGcd(b, a % b);
+  return a % b === 0 ? b : findGcd(b, a % b);
 }
 
-solution(3, 3, 3, 2);
+solution(1, 24, 11, 24);
